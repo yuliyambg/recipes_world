@@ -1,0 +1,8 @@
+<h1>Recipes</h1>
+<a href="/recipes/new">Create a Recipe</a>
+<%@recipes.each do |recipe| %>
+  <h2><a href="/recipes/<%=recipe.id %>"><%=recipe.title %></a></h2>
+  <p><%=recipe.preparation %></p>
+  <img src="<%= url(recipe.image) %>" alt="recipe" >
+  <%=recipe.category %>
+<% end %>

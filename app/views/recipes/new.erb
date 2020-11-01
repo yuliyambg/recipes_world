@@ -1,0 +1,21 @@
+<h1>Create a Recipe</h1>
+<p><%= @error %></p>
+<form action="/recipes" method="post">
+  <label>Title</label>
+<input type="text" name="title">
+  <label>Preparation</label>
+<!--  <input type="text" name="preparation">-->
+  <textarea name="preparation"></textarea>
+  <label>Image URL</label>
+  <input type="text" name="image">
+  <label>Category</label>
+<!--  <input type="text" name="category">-->
+
+  <select name="category">
+    <option value="meatlovers">Meatlovers</option>
+    <option value="vegeterian">Vegeterian</option>
+    <option value="vegan">Vegan</option>
+  </select>
+
+  <Button type="submit">Add Recipe</button>
+</form>
