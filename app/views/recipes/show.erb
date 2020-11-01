@@ -7,6 +7,9 @@
 
 <form action="/recipes/<%=@recipe.id %>" method="post" >
 <input type="hidden" name="_method" value="delete">
+<!--  validation/authorization  only the user who created the recipe can delete it-->
+  <%# if @recipe.user && @recipe.user.id == current_user.id %>
+    <% if @recipe.user == current_user %>
   <button type="submit">Delete Recipe</button>
-
+<%end %>
 </form>

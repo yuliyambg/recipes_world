@@ -5,5 +5,8 @@
   <p><%=recipe.preparation %></p>
   <img src="<%= recipe.image %>" onerror="this.onerror=null;this.src='/images/recipe-default-img.jpg';" alt="recipe" >
   <%=recipe.category %>
+  <%# if recipe.user && session[:user_id] == recipe.user.id %>
+    <% if current_user == recipe.user %>
   <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
+<% end %>
 <% end %>
