@@ -40,8 +40,12 @@ class RecipesController < ApplicationController
   get '/recipes/:id' do
     # if User.find_by(id: session[:user_id])
       if logged_in?
-      @recipe = Recipe.find(params[:id])
-      erb :'recipes/show'
+        @recipe = Recipe.find_by(id: params[:id])
+        if @recipe
+          erb :'recipes/show'
+        else
+          redirect '/recipes'
+        end
     else
       redirect '/login'
     end
