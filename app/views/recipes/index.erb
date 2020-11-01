@@ -3,6 +3,7 @@
 <%@recipes.each do |recipe| %>
   <h2><a href="/recipes/<%=recipe.id %>"><%=recipe.title %></a></h2>
   <p><%=recipe.preparation %></p>
-  <img src="<%= url(recipe.image) %>" alt="recipe" >
+  <img src="<%= recipe.image %>" onerror="this.onerror=null;this.src='/images/recipe-default-img.jpg';" alt="recipe" >
   <%=recipe.category %>
+  <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
 <% end %>

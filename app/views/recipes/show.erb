@@ -1,4 +1,12 @@
 <h1><%=@recipe.title%></h1>
-<p><%=@recipe.preparation %></p>
-<img src="<%= @recipe.image %>" alt="recipe">
-<%=@recipe.category %>
+<h2><%=@recipe.preparation %></h2>
+<img src="<%= @recipe.image == "" ? '/images/recipe-default-img.jpg' : @recipe.image  %>" alt="recipe">
+<!--<img src="<%#= @recipe.image %>" alt="recipe">-->
+
+<p><%=@recipe.category %></p>
+
+<form action="/recipes/<%=@recipe.id %>" method="post" >
+<input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete Recipe</button>
+
+</form>

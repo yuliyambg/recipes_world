@@ -1,0 +1,19 @@
+<h1>Edit Recipe <%= @recipe.title %></h1>
+<p><%= @error %></p>
+<form action="/recipes/<%=@recipe.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label>Title</label>
+  <input type="text" name="recipe[title]" value="<%=@recipe.title%>">
+  <label>Preparation</label>
+  <textarea name="recipe[preparation]"><%=@recipe.preparation %></textarea>
+  <label>Image URL</label>
+  <input type="text" name="recipe[image]" value="<%=@recipe.image %>">
+  <label>Category</label>
+  <select name="recipe[category]">
+    <option value="meatlovers">Meatlovers</option>
+    <option value="vegeterian">Vegeterian</option>
+    <option value="vegan">Vegan</option>
+  </select>
+
+  <Button type="submit">Edit Recipe</button>
+</form>
