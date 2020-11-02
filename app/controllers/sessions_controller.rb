@@ -20,14 +20,12 @@ class SessionsController < ApplicationController
         erb :'users/login'
       end
     end
-    end
+  end
+
     #logout
     get '/logout' do
       session.clear
       redirect '/'
     end
-
-
-
 
 end

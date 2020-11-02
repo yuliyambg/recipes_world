@@ -20,8 +20,9 @@ class RecipesController < ApplicationController
 
     #validation/authorization edit
     recipe = current_user.recipes.build(params)
-    if !recipe.title.empty? &&  !recipe.preparation.empty?
-       recipe.save
+    # if !recipe.title.empty? &&  !recipe.preparation.empty?
+    if recipe.save
+       # recipe.save
       redirect '/recipes'
     else
       @error = "Data invalid. Please try again."
