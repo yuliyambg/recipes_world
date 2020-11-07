@@ -2,20 +2,21 @@
 <p><%= @error %></p>
 <form action="/recipes" method="post">
   <label>Title</label>
-<input type="text" name="title">
+<input class="form-control form-control-sm" type="text" name="title">
   <label>Preparation</label>
 <!--  <input type="text" name="preparation">-->
-  <textarea name="preparation"></textarea>
+  <textarea class="form-control form-control-sm" name="preparation"></textarea>
   <label>Image URL</label>
-  <input type="text" name="image">
+  <input class="form-control form-control-sm" type="text" name="image">
   <label>Category</label>
 <!--  <input type="text" name="category">-->
 
-  <select name="category">
+  <select class="form-control form-control-sm" name="category">
+    <option value=" "> </option>
     <option value="meatlovers">Meatlovers</option>
     <option value="vegeterian">Vegeterian</option>
     <option value="vegan">Vegan</option>
-  </select>
+  </select><br>
 
-  <Button type="submit">Add Recipe</button>
+  <Button class="btn btn-primary" type="submit">Add Recipe</button>
 </form>

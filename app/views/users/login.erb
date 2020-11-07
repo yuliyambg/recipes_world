@@ -1,4 +1,5 @@
-<p><%= @error %></p>
+<% if @error != nil %><p class="alert alert-danger" role="alert"><%= @error %></p><% end %>
+<!--<p><%#= @error %></p>-->
 <form action="/login" method="post">
   <input type="text" name="username">
   <input type="password" name="password">

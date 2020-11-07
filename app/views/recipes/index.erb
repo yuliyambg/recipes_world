@@ -1,12 +1,36 @@
 <h1>Recipes</h1>
 <a href="/recipes/new">Create a Recipe</a>
-<%@recipes.each do |recipe| %>
+
+<div class="container-recipes">
+<%@recipes.each_slice(3) do |recipes| %>
+  <div class="row">
+    <% recipes.each do |recipe| %>
+      <div class="col-sm-6 col-lg-4">
   <h2><a href="/recipes/<%=recipe.id %>"><%=recipe.title %></a></h2>
   <p><%=recipe.preparation %></p>
-  <img src="<%= recipe.image %>" onerror="this.onerror=null;this.src='/images/recipe-default-img.jpg';" alt="recipe" >
+  <img class="img-recipes" src="<%= recipe.image %>" onerror="this.onerror=null;this.src='/images/recipe-default-img.jpg';" alt="recipe" >
   <%=recipe.category %>
   <%# if recipe.user && session[:user_id] == recipe.user.id %>
     <% if current_user == recipe.user %>
   <a href="/recipes/<%= recipe.id %>/edit">Edit</a>
+
 <% end %>
+      </div>
+      <%end %>
+  </div>
 <% end %>
+
+</div>
+
+<!--<h1>Recipes</h1>-->
+<!--<a href="/recipes/new">Create a Recipe</a>-->
+<%#@recipes.each do |recipe| %>
+<!--  <h2><a href="/recipes/<%#=recipe.id %>"><%#=recipe.title %></a></h2>-->
+<!--  <p><%#=recipe.preparation %></p>-->
+<!--  <img src="<%#= recipe.image %>" onerror="this.onerror=null;this.src='/images/recipe-default-img.jpg';" alt="recipe" >-->
+  <%#=recipe.category %>
+  <%# if recipe.user && session[:user_id] == recipe.user.id %>
+  <%# if current_user == recipe.user %>
+<!--    <a href="/recipes/<%#= recipe.id %>/edit">Edit</a>-->
+  <%# end %>
+<%# end %>

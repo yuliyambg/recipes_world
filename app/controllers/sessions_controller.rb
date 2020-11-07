@@ -13,8 +13,10 @@ class SessionsController < ApplicationController
     else
 
       user = User.find_by(username: params[:username])
-
       if user && user.authenticate(params[:password])
+
+      # if user = User.find_by(username: params["username"]) && user.authenticate(params["password"])
+
         # log in
         session[:user_id] = user.id
         redirect '/recipes'

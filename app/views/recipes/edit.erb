@@ -3,17 +3,21 @@
 <form action="/recipes/<%=@recipe.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <label>Title</label>
-  <input type="text" name="recipe[title]" value="<%=@recipe.title%>">
+  <input class="form-control form-control-sm" type="text" name="recipe[title]" value="<%=@recipe.title%>"><br>
   <label>Preparation</label>
-  <textarea name="recipe[preparation]"><%=@recipe.preparation %></textarea>
-  <label>Image URL</label>
-  <input type="text" name="recipe[image]" value="<%=@recipe.image %>">
+  <textarea class="form-control form-control-sm" name="recipe[preparation]"><%=@recipe.preparation %></textarea><br>
   <label>Category</label>
-  <select name="recipe[category]">
+  <select class="form-control form-control-sm" name="recipe[category]">
+    <option value=" "> </option>
     <option value="meatlovers">Meatlovers</option>
     <option value="vegeterian">Vegeterian</option>
     <option value="vegan">Vegan</option>
-  </select>
+  </select><br>
 
-  <Button type="submit">Edit Recipe</button>
+  <label>Image URL</label>
+  <input class="form-control form-control-sm" type="text" name="recipe[image]" value="<%=@recipe.image %>"><br><br>
+
+
+
+  <Button class="btn btn-primary" type="submit">Edit Recipe</button>
 </form>
